@@ -1,6 +1,6 @@
 # Free Claude Code (FCC) 中文使用指南
 
-本仓库整理了 [Free Claude Code](https://github.com/Alishahryar1/free-claude-code) 的中文安装与使用教程。
+本仓库整理了 [Free Claude Code](https://github.com/Alishahryar1/free-claude-code) 的中文安装与使用教程，并提供一键安装脚本。
 
 FCC 是一个开源工具，让你用免费/低成本模型（NVIDIA NIM、OpenRouter、Groq 等）来运行多种 Coding Agent（Claude Code、Codex、Pi、OpenCode、Cline 等），支持终端、浏览器、IDE、手机。
 
@@ -9,23 +9,27 @@ FCC 是一个开源工具，让你用免费/低成本模型（NVIDIA NIM、OpenR
 
 ---
 
-## 一、快速安装
+## 一、一键安装（推荐）
 
 ### macOS / Linux
 
 ```bash
-curl -fsSL "https://raw.githubusercontent.com/Alishahryar1/free-claude-code/main/scripts/install.sh" | sh
+bash <(curl -fsSL https://raw.githubusercontent.com/gitdajun/free-claude-code-guide/main/scripts/install.sh)
 ```
 
 ### Windows（PowerShell）
 
 ```powershell
-& ([scriptblock]::Create((irm "https://raw.githubusercontent.com/Alishahryar1/free-claude-code/main/scripts/install.ps1")))
+& ([scriptblock]::Create((irm "https://raw.githubusercontent.com/gitdajun/free-claude-code-guide/main/scripts/install.ps1")))
 ```
 
 安装时会提示选择 Coding Agent（至少选一个），可选是否安装 RTK。
 
 重新运行以上命令即可更新。
+
+> 也可以直接使用官方原版命令：  
+> macOS/Linux: `curl -fsSL "https://raw.githubusercontent.com/Alishahryar1/free-claude-code/main/scripts/install.sh" | sh`  
+> Windows: `& ([scriptblock]::Create((irm "https://raw.githubusercontent.com/Alishahryar1/free-claude-code/main/scripts/install.ps1")))`
 
 ---
 
@@ -37,7 +41,7 @@ curl -fsSL "https://raw.githubusercontent.com/Alishahryar1/free-claude-code/main
 | macOS | Applications 或桌面打开 **Free Claude Code** |
 | Linux | 终端运行 `fcc-server`（保持终端不要关闭） |
 
-启动后会自动打开 **Admin UI**（浏览器管理页面）。
+启动后会自动打开 **Admin UI**（浏览器管理页面）。  
 Windows / macOS 可通过托盘图标打开 Admin、重启或退出。
 
 ---
@@ -134,7 +138,7 @@ args = ["--print-proxy-auth-token"]
 
 ## 六、语音输入（可选）
 
-重新运行安装命令并加上参数：
+重新运行官方安装命令并加上参数：
 
 **macOS / Linux：**
 ```bash
@@ -161,7 +165,19 @@ curl -fsSL "https://raw.githubusercontent.com/Alishahryar1/free-claude-code/main
 fcc-server --version   # 查看版本
 ```
 
-更新：重新执行安装命令即可。
+更新：重新执行一键安装命令即可。
+
+---
+
+## 仓库结构
+
+```
+├── README.md
+├── LICENSE
+└── scripts/
+    ├── install.sh      # macOS / Linux 一键安装
+    └── install.ps1     # Windows 一键安装
+```
 
 ---
 
@@ -170,7 +186,7 @@ fcc-server --version   # 查看版本
 - FCC 是独立开源项目，与 Anthropic 无关。
 - 免费额度由各 Provider 控制，可能随时变化。
 - 请遵守各 Provider 的服务条款。
-- 本仓库仅做中文整理，不提供任何 API Key 或代理服务。
+- 本仓库仅做中文整理与一键脚本包装，不提供任何 API Key 或代理服务。
 
 ---
 
